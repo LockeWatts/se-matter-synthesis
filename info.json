@@ -1,8 +1,8 @@
 {
   "name": "se-matter-synthesis",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "title": "Space Exploration: Matter Synthesis",
-  "author": "Anonymous",
+  "author": "LockeWatts",
   "homepage": "https://github.com/LockeWatts/se-matter-synthesis",
   "factorio_version": "2.1",
   "dependencies": [

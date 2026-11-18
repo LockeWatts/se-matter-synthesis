@@ -29,6 +29,7 @@ data:extend({ fusion("se-matter-fusion-iron", {type="item", name="iron-ore", amo
   (function() local r = fusion("se-matter-fusion-uranium", {type="item", name="uranium-ore", amount_min=1, amount_max=1, independent_probability=0.5}) r.energy_required = 6 return r end)(),
   (function() local r = fusion("se-matter-fusion-dirty", {type="item", name="se-contaminated-scrap", amount=15}) table.remove(r.results, 2) return r end)(),
   { type="technology", name="se-naquium-cube", icon="cube.png", icon_size=128, unit={count=100, time=60, ingredients={{"automation-science-pack",1},{"se-energy-science-pack-4",1},{"se-deep-space-science-pack-1",1}}} },
+  { type="technology", name="se-processing-methane-ice", icon="m.png", icon_size=128, unit={count=100, time=60, ingredients={{"automation-science-pack",1}}} },
   { type="recipe", name="se-antimatter-stream", categories={"space-materialisation"}, ingredients={{type="fluid", name="se-particle-stream", amount=50}}, results={{type="fluid", name="se-antimatter-stream", amount=50}} },
   { type="technology", name="se-space-matter-fusion", icon="__space-exploration-graphics__/graphics/technology/material-fabricator.png", icon_size=128, order="e-g",
     unit={count=500, time=60, ingredients={{"automation-science-pack",1},{"se-energy-science-pack-4",1}}} } })

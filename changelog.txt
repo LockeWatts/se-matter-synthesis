@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 18. 11. 2026
+  Changes:
+    - Matter fusion now requires Methane ice processing, so methane gas cannot be fused before it is normally unlocked.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 18. 11. 2026
   Changes:

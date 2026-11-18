@@ -50,6 +50,13 @@ for _, def in ipairs(config.products) do
 
     data:extend({ recipe })
     table.insert(product_unlocks, { type = "unlock-recipe", recipe = recipe.name })
+
+    if def.requires and data.raw.technology[def.requires] then
+      fusion_tech.prerequisites = fusion_tech.prerequisites or {}
+      local present = false
+      for _, name in pairs(fusion_tech.prerequisites) do present = present or name == def.requires end
+      if not present then table.insert(fusion_tech.prerequisites, def.requires) end
+    end
   end
 end
 

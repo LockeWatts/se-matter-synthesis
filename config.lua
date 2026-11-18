@@ -9,12 +9,14 @@ config.prefix = "sems-"
 --   type   : "fluid" or "item"
 --   amount : yield per craft, before productivity
 --   time   : craft time in seconds (the Material fabricator has crafting speed 4)
+--   requires : technology that normally unlocks the product; it becomes a prerequisite
+--              of Matter fusion so the product cannot be reached before it
 config.products = {
   { type = "fluid", name = "water",         amount = 500, time = 1, order = "a" },
   { type = "fluid", name = "petroleum-gas", amount = 100, time = 1, order = "b" },
   { type = "fluid", name = "light-oil",     amount = 100, time = 1, order = "c" },
   { type = "fluid", name = "heavy-oil",     amount = 100, time = 1, order = "d" },
-  { type = "fluid", name = "se-methane-gas", amount = 100, time = 1, order = "e" },
+  { type = "fluid", name = "se-methane-gas", amount = 100, time = 1, order = "e", requires = "se-processing-methane-ice" },
   { type = "item",  name = "coal",          amount = 10,  time = 1, order = "f" },
 }
 

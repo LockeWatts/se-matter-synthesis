@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 18. 11. 2026
+  Features:
+    - Advanced matter fusion now unlocks a naquium ore recipe. It has no basic version.
+  Changes:
+    - Recipes added to an already researched technology are now granted whenever the mod is added or updated.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.1
 Date: 18. 11. 2026
   Changes:

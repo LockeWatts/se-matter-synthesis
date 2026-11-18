@@ -94,7 +94,7 @@ local function scale_amounts(entry, factor)
   end
 end
 
-local function strip_prefix(name)
+function lib.strip_prefix(name)
   for _, prefix in ipairs({ config.prefix, "se-" }) do
     if string.sub(name, 1, #prefix) == prefix then return string.sub(name, #prefix + 1) end
   end
@@ -115,7 +115,7 @@ function lib.make_advanced_recipe(base)
   local batch = config.advanced.batch
   local coolant_scale = batch * config.advanced.coolant_factor
   local recipe = table.deepcopy(base)
-  recipe.name = config.prefix .. "advanced-" .. strip_prefix(base.name)
+  recipe.name = config.prefix .. "advanced-" .. lib.strip_prefix(base.name)
   recipe.energy_required = (base.energy_required or 0.5) * batch
   recipe.enabled = false
   recipe.order = "c-" .. (base.order or base.name)

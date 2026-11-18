@@ -53,6 +53,12 @@ config.advanced = {
     { type = "item",  name = "se-fusion-test-data",       amount = 10 },
     { type = "fluid", name = "se-particle-stream",        amount = 100 },
   },
+  -- Products that only the advanced technology can fuse. There is no basic recipe for
+  -- these; amount and time are per advanced craft (1 matrix, 250 particle stream and
+  -- 25 supercooled coolant, like every advanced recipe).
+  products = {
+    { type = "item", name = "se-naquium-ore", amount = 5, time = 30, order = "n" },
+  },
   -- Tint applied to SE's Matter fusion technology icon for the advanced technology.
   tint = { r = 1, g = 0.55, b = 0.95 },
 }

@@ -10,6 +10,7 @@ data = { raw = { recipe = {}, technology = {}, item = {}, fluid = {} } }
 function data:extend(list) for _, p in ipairs(list) do assert(p.type and p.name, "prototype needs type and name") assert(not data.raw[p.type][p.name], "duplicate " .. p.name) data.raw[p.type][p.name] = p end end
 local function icon(n) return "__base__/graphics/icons/" .. n .. ".png" end
 data.raw.item["se-naquium-cube"] = {type="item", name="se-naquium-cube", icon="__space-exploration-graphics__/graphics/icons/naquium-cube.png", icon_size=64, stack_size=8, order="n-c", subgroup="naquium"}
+data.raw.item["se-naquium-ore"] = {type="item", name="se-naquium-ore", icon="naq.png", icon_size=64}
 data.raw.item["uranium-ore"] = {type="item", name="uranium-ore", icon="u.png", icon_size=64}
 for _, n in ipairs({"iron-ore", "copper-ore", "coal"}) do data.raw.item[n] = {type="item", name=n, icon=icon(n), icon_size=64} end
 for _, n in ipairs({"water", "petroleum-gas", "light-oil", "heavy-oil", "se-methane-gas"}) do data.raw.fluid[n] = {type="fluid", name=n, icon=icon("fluid/" .. n), icon_size=64} end

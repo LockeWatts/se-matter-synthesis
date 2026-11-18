@@ -101,6 +101,27 @@ for _, name in ipairs(lib.fusion_recipe_names()) do
   end
 end
 
+-- Products with no basic recipe: the advanced iron recipe with its product swapped.
+local advanced_template = lib.make_advanced_recipe(template)
+for _, def in ipairs(config.advanced.products) do
+  local product_proto = data.raw[def.type] and data.raw[def.type][def.name]
+  if advanced_template and product_proto then
+    local recipe = table.deepcopy(advanced_template)
+    recipe.name = config.prefix .. "advanced-matter-fusion-" .. lib.strip_prefix(def.name)
+    recipe.energy_required = def.time
+    recipe.order = "d-" .. def.order
+    recipe.localised_name = { "recipe-name." .. config.prefix .. "advanced-matter-fusion-to", { def.type .. "-name." .. def.name } }
+    recipe.icons = lib.swap_product_icon(recipe.icons, template_product, product_proto)
+    for index, result in ipairs(recipe.results) do
+      if result.name == lib.template_product_name then
+        recipe.results[index] = { type = def.type, name = def.name, amount = def.amount }
+      end
+    end
+    table.insert(advanced_recipes, recipe)
+    table.insert(advanced_unlocks, { type = "unlock-recipe", recipe = recipe.name })
+  end
+end
+
 data:extend({ matrix, matrix_recipe })
 data:extend(advanced_recipes)
 

@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 18. 11. 2026
+  Features:
+    - Added Advanced matter fusion: batch recipes using a permanent fusion matrix, with one fifth of the coolant and no contaminated scrap or junk data.
+  Changes:
+    - Water, oil products and coal fusion are unlocked by a single technology again.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 18. 11. 2026
+  Changes:
+    - Water, oil products and coal fusion are now unlocked by three separate technologies.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 18. 11. 2026
+  Features:
+    - Added matter fusion recipes for water, petroleum gas, light oil, heavy oil and coal.
+    - Added an infinite Matter fusion productivity research.

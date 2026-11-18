@@ -14,6 +14,8 @@ lib.scrap_name = "se-contaminated-scrap"
 lib.coolant_in_name = "se-space-coolant-supercooled"
 lib.coolant_out_name = "se-space-coolant-hot"
 lib.matrix_name = config.prefix .. "fusion-matrix"
+lib.matrix_icon = "__se-matter-synthesis__/graphics/icons/fusion-matrix.png"
+lib.matrix_icon_size = 64
 lib.products_tech_name = config.prefix .. "matter-fusion-fluids"
 lib.advanced_tech_name = config.prefix .. "advanced-matter-fusion"
 lib.productivity_tech_name = config.prefix .. "matter-fusion-productivity-1"
@@ -149,12 +151,12 @@ function lib.make_advanced_recipe(base)
 
   recipe.localised_name = { "recipe-name." .. config.prefix .. "advanced-matter-fusion-to", localised_product_name(products[1]) }
   if recipe.icons then
+    -- Small fusion matrix badge in the free top-left corner.
     table.insert(recipe.icons, {
-      icon = data.raw.item[lib.naquium_cube_item_name].icon,
-      icon_size = data.raw.item[lib.naquium_cube_item_name].icon_size or 64,
-      scale = 0.2 * 64 / (data.raw.item[lib.naquium_cube_item_name].icon_size or 64),
+      icon = lib.matrix_icon,
+      icon_size = lib.matrix_icon_size,
+      scale = 0.2 * 64 / lib.matrix_icon_size,
       shift = { -9, -9 },
-      tint = config.advanced.tint,
     })
   end
   return recipe

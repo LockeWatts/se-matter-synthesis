@@ -65,10 +65,9 @@ matrix.name = lib.matrix_name
 matrix.localised_name = nil
 matrix.localised_description = nil
 matrix.pictures = nil
-matrix.icons = cube_item.icons and table.deepcopy(cube_item.icons)
-  or { { icon = cube_item.icon, icon_size = cube_item.icon_size or 64 } }
-for _, layer in pairs(matrix.icons) do layer.tint = config.advanced.tint end
-matrix.icon = nil
+matrix.icon = lib.matrix_icon
+matrix.icon_size = lib.matrix_icon_size
+matrix.icons = nil
 matrix.order = (cube_item.order or "") .. "-z[" .. lib.matrix_name .. "]"
 
 local matrix_recipe = {

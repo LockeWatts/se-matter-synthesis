@@ -49,7 +49,7 @@ config.advanced = {
     { type = "item",  name = "se-fusion-test-data",       amount = 10 },
     { type = "fluid", name = "se-particle-stream",        amount = 100 },
   },
-  -- Colour used to tell the matrix and the advanced technology apart from SE's icons.
+  -- Tint applied to SE's Matter fusion technology icon for the advanced technology.
   tint = { r = 1, g = 0.55, b = 0.95 },
 }
 

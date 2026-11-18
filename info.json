@@ -1,6 +1,6 @@
 {
   "name": "se-matter-synthesis",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "title": "Space Exploration: Matter Synthesis",
   "author": "Anonymous",
   "factorio_version": "2.1",
@@ -8,5 +8,5 @@
     "base >= 2.1.23",
     "space-exploration >= 0.7.64"
   ],
-  "description": "Extends Space Exploration's matter fusion so production chains can run entirely from the Material fabricator: adds fusion recipes for water, oil products and coal, a late-game advanced tier with no card upkeep or waste, and an infinite research that raises matter fusion output."
+  "description": "Extends Space Exploration's matter fusion so production chains can run entirely from the Material fabricator: adds fusion recipes for water, oil products, methane and coal, a late-game advanced tier with no card upkeep or waste, and an infinite research that raises matter fusion output."
 }

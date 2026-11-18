@@ -14,7 +14,8 @@ config.products = {
   { type = "fluid", name = "petroleum-gas", amount = 100, time = 1, order = "b" },
   { type = "fluid", name = "light-oil",     amount = 100, time = 1, order = "c" },
   { type = "fluid", name = "heavy-oil",     amount = 100, time = 1, order = "d" },
-  { type = "item",  name = "coal",          amount = 10,  time = 1, order = "e" },
+  { type = "fluid", name = "se-methane-gas", amount = 100, time = 1, order = "e" },
+  { type = "item",  name = "coal",          amount = 10,  time = 1, order = "f" },
 }
 
 -- Research units for the technology that unlocks the recipes above.

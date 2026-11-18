@@ -12,7 +12,7 @@ local function icon(n) return "__base__/graphics/icons/" .. n .. ".png" end
 data.raw.item["se-naquium-cube"] = {type="item", name="se-naquium-cube", icon="__space-exploration-graphics__/graphics/icons/naquium-cube.png", icon_size=64, stack_size=8, order="n-c", subgroup="naquium"}
 data.raw.item["uranium-ore"] = {type="item", name="uranium-ore", icon="u.png", icon_size=64}
 for _, n in ipairs({"iron-ore", "copper-ore", "coal"}) do data.raw.item[n] = {type="item", name=n, icon=icon(n), icon_size=64} end
-for _, n in ipairs({"water", "petroleum-gas", "light-oil", "heavy-oil"}) do data.raw.fluid[n] = {type="fluid", name=n, icon=icon("fluid/" .. n), icon_size=64} end
+for _, n in ipairs({"water", "petroleum-gas", "light-oil", "heavy-oil", "se-methane-gas"}) do data.raw.fluid[n] = {type="fluid", name=n, icon=icon("fluid/" .. n), icon_size=64} end
 local function fusion(name, product)
   return { type="recipe", name=name, categories={"space-materialisation"}, enabled=false, energy_required=1,
     ingredients = { {type="item", name="se-fusion-test-data", amount=1, ignored_by_stats=1}, {type="fluid", name="se-particle-stream", amount=50}, {type="fluid", name="se-space-coolant-supercooled", amount=25} },

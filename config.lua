@@ -18,9 +18,10 @@ config.products = {
   { type = "item",  name = "coal",          amount = 10,  time = 1, order = "f" },
 }
 
--- Research units for the technology that unlocks the recipes above.
--- It follows SE's "Matter fusion" and uses the same science packs.
-config.products_tech_count = 500
+-- The recipes above are added to SE's own "Matter fusion" technology. Its research
+-- cost is raised to this many units to pay for them (SE's own value is 500).
+-- Set to nil to leave SE's cost alone.
+config.fusion_tech_count = 1000
 
 -- Infinite research: productivity added to every matter fusion recipe per level (0.1 = +10%).
 config.productivity_per_level = 0.1

@@ -53,9 +53,12 @@ for _, def in ipairs(config.products) do
   end
 end
 
-local products_unit = table.deepcopy(fusion_tech.unit)
-products_unit.count = config.products_tech_count
-products_unit.count_formula = nil
+-- They join SE's own Matter fusion technology rather than getting a second one.
+fusion_tech.effects = fusion_tech.effects or {}
+for _, unlock in ipairs(product_unlocks) do table.insert(fusion_tech.effects, unlock) end
+if config.fusion_tech_count and fusion_tech.unit and fusion_tech.unit.count then
+  fusion_tech.unit.count = config.fusion_tech_count
+end
 
 --------------------------------------------------------------------------------
 -- Advanced matter fusion
@@ -100,20 +103,11 @@ data:extend(advanced_recipes)
 data:extend({
   {
     type = "technology",
-    name = lib.products_tech_name,
-    icons = lib.tech_icons(fusion_tech),
-    order = (fusion_tech.order or "") .. "-a",
-    effects = product_unlocks,
-    prerequisites = { lib.fusion_tech_name },
-    unit = products_unit,
-  },
-  {
-    type = "technology",
     name = lib.advanced_tech_name,
     icons = lib.tech_icons(fusion_tech, config.advanced.tint),
-    order = (fusion_tech.order or "") .. "-b",
+    order = (fusion_tech.order or "") .. "-a",
     effects = advanced_unlocks,
-    prerequisites = { lib.products_tech_name, lib.naquium_cube_tech_name },
+    prerequisites = { lib.fusion_tech_name, lib.naquium_cube_tech_name },
     unit = {
       count = config.advanced.tech_count,
       time = cube_tech.unit.time or 60,
@@ -124,7 +118,7 @@ data:extend({
     type = "technology",
     name = lib.productivity_tech_name,
     icons = lib.productivity_tech_icons(fusion_tech),
-    order = (fusion_tech.order or "") .. "-c",
+    order = (fusion_tech.order or "") .. "-b",
     effects = lib.productivity_effects(),
     prerequisites = { lib.fusion_tech_name },
     unit = {

@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 18. 11. 2026
+  Changes:
+    - Water, oil product, methane and coal fusion are now unlocked by Space Exploration's own Matter fusion technology, which costs 1000 units instead of 500. The separate technology is gone.
+    - Advanced matter fusion now follows Matter fusion and Naquium cube directly.
+  Migration:
+    - Saves that already researched Matter fusion get the new recipes unlocked.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 18. 11. 2026
   Features:

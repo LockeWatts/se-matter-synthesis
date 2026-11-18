@@ -45,7 +45,7 @@ print(L.eval(r'''(function()
     out[#out+1] = "RECIPE " .. n .. "  t=" .. tostring(r.energy_required) .. " allow_prod=" .. tostring(r.allow_productivity) .. " max_prod=" .. tostring(r.maximum_productivity) .. " order=" .. tostring(r.order)
     for _, res in ipairs(r.results) do out[#out+1] = "    -> " .. ser(res) end
     out[#out+1] = "    <- " .. ser(r.ingredients) if n:find("sems") and r.icons then out[#out+1] = "    icons: " .. #r.icons .. " layers, last " .. ser(r.icons[#r.icons]) .. "\n    name: " .. ser(r.localised_name) end end out[#out+1] = "ITEM " .. ser(data.raw.item["sems-fusion-matrix"])
-  for _, n in ipairs({"sems-matter-fusion-fluids", "sems-advanced-matter-fusion", "sems-matter-fusion-productivity-1"}) do out[#out+1] = "TECH " .. n .. "\n    " .. ser(data.raw.technology[n]) end
+  for _, n in ipairs({"se-space-matter-fusion", "sems-advanced-matter-fusion", "sems-matter-fusion-productivity-1"}) do out[#out+1] = "TECH " .. n .. "\n    " .. ser(data.raw.technology[n]) end
   out[#out+1] = "exclusions: " .. ser(se_procedural_tech_exclusions)
   out[#out+1] = "template untouched icon: " .. data.raw.recipe["se-matter-fusion-iron"].icons[3].icon
   return table.concat(out, "\n") end)()'''))

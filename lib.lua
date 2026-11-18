@@ -16,7 +16,6 @@ lib.coolant_out_name = "se-space-coolant-hot"
 lib.matrix_name = config.prefix .. "fusion-matrix"
 lib.matrix_icon = "__se-matter-synthesis__/graphics/icons/fusion-matrix.png"
 lib.matrix_icon_size = 64
-lib.products_tech_name = config.prefix .. "matter-fusion-fluids"
 lib.advanced_tech_name = config.prefix .. "advanced-matter-fusion"
 lib.productivity_tech_name = config.prefix .. "matter-fusion-productivity-1"
 

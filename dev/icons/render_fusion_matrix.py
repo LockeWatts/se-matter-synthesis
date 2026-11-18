@@ -41,7 +41,7 @@ def shade(albedo, normal, gloss, spec_strength):
     spec = np.clip(np.tensordot(normal, HALF, axes=([-1], [0])), 0, 1) ** gloss
     return albedo * (0.16 + 0.95 * diff)[..., None] + spec_strength * spec[..., None]
 
-def render(style, seed):
+def render(style, seed, size=64):
     rng = np.random.default_rng(seed)
     rgb = np.zeros((S, S, 3)); alpha = np.zeros((S, S)); emit = np.zeros((S, S, 3))
     grain = noise(rng, 180, -1, 1); cloud = noise(rng, 9, -1, 1); mottle = noise(rng, 28, 0, 1)
@@ -117,7 +117,7 @@ def render(style, seed):
     tight = bloom.filter(ImageFilter.GaussianBlur(7)); tight.putalpha(tight.getchannel("A").point(lambda a: int(a * 0.45)))
     out = Image.new("RGBA", (S, S), (0, 0, 0, 0))
     out.alpha_composite(wide); out.alpha_composite(body); out.alpha_composite(tight)
-    return out.resize((64, 64), Image.LANCZOS)
+    return out.resize((size, size), Image.LANCZOS)
 
 if __name__ == "__main__":
     out_dir = sys.argv[1]

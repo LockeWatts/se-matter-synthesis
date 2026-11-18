@@ -1,12 +1,13 @@
 {
   "name": "se-matter-synthesis",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "title": "Space Exploration: Matter Synthesis",
   "author": "Anonymous",
+  "homepage": "https://github.com/LockeWatts/se-matter-synthesis",
   "factorio_version": "2.1",
   "dependencies": [
     "base >= 2.1.23",
     "space-exploration >= 0.7.64"
   ],
-  "description": "Extends Space Exploration's matter fusion so production chains can run entirely from the Material fabricator: adds fusion recipes for water, oil products, methane and coal, a late-game advanced tier with no card upkeep or waste, and an infinite research that raises matter fusion output."
+  "description": "Lets the Material fabricator replace mining in the very late game of Space Exploration. Matter fusion gains recipes for water, petroleum gas, light oil, heavy oil, methane gas and coal. Advanced matter fusion adds the fusion matrix, a permanent catalyst: larger batches, far less coolant, no contaminated scrap or junk data, and a naquium ore recipe. An infinite research raises the output of every matter fusion recipe."
 }
